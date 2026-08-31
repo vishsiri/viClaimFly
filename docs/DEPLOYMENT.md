@@ -7,6 +7,8 @@
 5. Review `regions.providers` and disable hooks not used by the server.
 6. Edit MiniMessage text in `plugins/viClaimFly/messages.yml`, then use `/claimfly reload`.
 
+For owner/member permission policy and the “each player needs their own permission” preset, follow [`PERMISSIONS.md`](PERMISSIONS.md).
+
 ChocoFly's flat YAML is not read automatically because several old keys had ambiguous or broken semantics. Equivalent values are:
 
 | ChocoFly | viClaimFly |

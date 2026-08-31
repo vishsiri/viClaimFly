@@ -35,6 +35,8 @@ Supported claim providers are ProtectionStones, Lands, HuskClaims, GriefPreventi
 
 These are the bundled defaults. Runtime permission nodes are read from `permissions.*` in `config.yml`.
 
+See [`PERMISSIONS.md`](docs/PERMISSIONS.md) for the exact owner/member decision table, the individual `claim.fly` setup, and ProtectionStones delegated-owner behavior.
+
 ProtectionStones can preserve the patched ChocoFly delegation contract: a member may fly when an owner has `claim.fly`. Online owners use Bukkit permissions; offline owners use an optional LuckPerms cached/async lookup. While an offline owner is loading, access is denied until a later movement or command re-check.
 
 ## Configuration

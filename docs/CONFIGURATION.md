@@ -17,6 +17,8 @@
 - `debug`: transition/provider diagnostics.
 - `messages.yml`: prefix, every command/event response, and placeholder values. A blank message suppresses only that response.
 
+The complete claim-role and permission combinations are documented in [`PERMISSIONS.md`](PERMISSIONS.md), including a single-permission individual mode and the ProtectionStones delegated-owner compatibility mode.
+
 Valid `slow-falling.apply-on` values are `MANUAL`, `ADMIN`, `CLAIM_EXIT`, `WORLD_CHANGE`, `GAME_MODE`, `COMBAT`, `JOIN`, `QUIT`, and `DEATH`.
 
 ## Intentionally fixed technical contracts
