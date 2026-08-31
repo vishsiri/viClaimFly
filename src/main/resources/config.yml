@@ -1,0 +1,91 @@
+# viClaimFly 1.1 configuration
+config-version: 2
+debug: false
+
+commands:
+  # The first label is the main command; the rest are aliases. Routes update on reload.
+  routes:
+    claimfly: [claimfly, regionfly, chocofly, pfly, cfly, rfly]
+    claimflyreload: [claimflyreload, cfreload]
+
+permissions:
+  owner: claim.fly
+  trusted:
+    - claim.fly.trusted
+    - claim.fly.other
+    - claim.fly.others
+    - claim.fly.member
+    - claim.fly.members
+  auto-flight: claim.fly.autofly
+  warmup: claim.fly.warmup
+  warmup-bypass: claim.fly.warmup.bypass
+  cooldown-bypass: claim.fly.cooldown.bypass
+  join-bypass: claim.fly.join.bypass
+  plot-road: claim.fly.plotroad
+  redprotect-owner-bypass: redprotect.flag.bypass.build
+  admin-toggle: claim.fly.admin
+  reload: claim.reload
+
+notifications:
+  # Replaces ChocoFly's claimfly_notif and autoclaimfly_notif switches.
+  manual: true
+  auto: true
+  admin: true
+
+flight:
+  manual-enabled: true
+  auto-enabled: true
+  restore-previous-flight-state: true
+  fly-speed: 0.1
+  allowed-game-modes: [SURVIVAL, ADVENTURE]
+  disable-on-world-change: true
+  disable-on-game-mode-change: true
+  disable-on-death: true
+  cleanup-on-join: true
+  disable-in-pvp-combat: true
+  cancel-fall-damage-while-managed: true
+
+warmup:
+  seconds: 2
+  # PERMISSION preserves ChocoFly semantics: only claim.fly.warmup receives warmup.
+  # ALL applies warmup to everyone except claim.fly.warmup.bypass; DISABLED turns it off.
+  mode: PERMISSION
+  cancel-on-block-move: true
+  cancel-on-damage: true
+  cancel-on-claim-exit: true
+
+cooldown:
+  seconds: 5
+
+slow-falling:
+  enabled: true
+  duration-seconds: 5
+  amplifier: 0
+  ambient: false
+  particles: false
+  icon: true
+  apply-on: [CLAIM_EXIT, COMBAT]
+
+regions:
+  provider-warning-interval-seconds: 60
+  providers:
+    protectionstones: true
+    lands: true
+    huskclaims: true
+    griefprevention: true
+    redprotect: true
+    griefdefender: true
+    plotsquared: true
+    worldguard: true
+  protectionstones:
+    # A member can fly when at least one owner has permissions.owner.
+    delegated-owner-permission: true
+
+integrations:
+  placeholderapi:
+    enabled: true
+    identifier: claimfly
+    status-parameter: status
+  pvpmanager:
+    enabled: true
+    warning-interval-seconds: 60

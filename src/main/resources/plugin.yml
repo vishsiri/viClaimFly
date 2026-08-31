@@ -1,0 +1,62 @@
+name: viClaimFly
+version: '${version}'
+main: dev.visherryz.viclaimfly.ViClaimFlyPlugin
+api-version: '1.21'
+folia-supported: true
+authors: [VisherRyz]
+description: Folia-safe claim flight with pluggable protection integrations.
+softdepend:
+  - PlaceholderAPI
+  - PvPManager
+  - LuckPerms
+  - ProtectionStones
+  - WorldGuard
+  - GriefPrevention
+  - GriefDefender
+  - HuskClaims
+  - Lands
+  - PlotSquared
+  - RedProtect
+permissions:
+  claim.fly:
+    description: Toggle flight inside an owned claim.
+    default: false
+  claim.fly.trusted:
+    description: Use claim flight in claims where the player is trusted.
+    default: false
+  claim.fly.other:
+    description: Legacy trusted-claim permission.
+    default: false
+  claim.fly.others:
+    description: Legacy trusted-claim permission.
+    default: false
+  claim.fly.member:
+    description: Legacy trusted-claim permission.
+    default: false
+  claim.fly.members:
+    description: Legacy trusted-claim permission.
+    default: false
+  claim.fly.autofly:
+    description: Automatically enable managed flight when entering an eligible claim.
+    default: false
+  claim.fly.warmup:
+    description: Apply the legacy opt-in warmup when warmup mode is PERMISSION.
+    default: false
+  claim.fly.warmup.bypass:
+    description: Bypass claim flight warmup.
+    default: op
+  claim.fly.cooldown.bypass:
+    description: Bypass claim flight cooldown.
+    default: op
+  claim.fly.join.bypass:
+    description: Preserve the player's flight state during join cleanup.
+    default: false
+  claim.fly.plotroad:
+    description: Allow claim flight on PlotSquared roads.
+    default: false
+  claim.fly.admin:
+    description: Toggle viClaimFly for another online player.
+    default: op
+  claim.reload:
+    description: Reload viClaimFly configuration atomically.
+    default: op
